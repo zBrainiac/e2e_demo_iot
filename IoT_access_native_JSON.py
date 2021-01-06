@@ -17,7 +17,7 @@ geolocation_schema = StructType() \
     .add("sensor_id", IntegerType(), True) \
     .add("city", StringType(), True) \
     .add("lat", DoubleType(), True) \
-    .add("lon", DoubleType(), True)
+    .add("log", DoubleType(), True)
 
 df_geolocation_data_clean = spark.read.format("csv") \
     .option("header", True) \
@@ -26,7 +26,7 @@ df_geolocation_data_clean = spark.read.format("csv") \
 
 df_geolocation_data_clean.printSchema()
 
-df_geolocation_data_clean.show(n=5, truncate=False)
+df_geolocation_data_clean.show(n=10, truncate=False)
 print(df_geolocation_data_clean.count())
 
 print("--- %s 'geo location data cleansing' in seconds ---" % (time.time() - start_time))
