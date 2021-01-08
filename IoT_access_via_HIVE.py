@@ -10,7 +10,7 @@ filename_joined_iot_geoloc = sys.argv[1] if len(sys.argv) >= 3 else default_loca
 spark = SparkSession \
     .builder \
     .appName("IoT_access_via_HIVE") \
-    .config("spark.yarn.access.hadoopFileSystems", "s3a://demo-aws-2//") \
+    .config("spark.kerberos.access.hadoopFileSystems", "s3a://demo-aws-2//") \
     .getOrCreate()
 
 spark.sql("SHOW databases").show()

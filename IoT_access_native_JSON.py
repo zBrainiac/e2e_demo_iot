@@ -36,3 +36,8 @@ df_geolocation_data_clean.show(n=10, truncate=False)
 print(df_geolocation_data_clean.count())
 
 print("--- %s 'geo location data cleansing' in seconds ---" % (time.time() - start_time))
+
+print("---- save as ORC ----")
+start_time = time.time()
+df_geolocation_data_clean.write.mode("Overwrite").orc("/tmp/df_geolocation_data_clean")
+print("--- %s 'save as ORC' in seconds ---" % (time.time() - start_time))

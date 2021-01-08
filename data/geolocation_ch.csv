@@ -1,4 +1,4 @@
-﻿sensor_id,city,lat,log
+﻿sensor_id,city,lat,lon
 1,Geneva,46.195602,6.148113
 2,Zürich,47.366667,8.55
 3,Basel,47.558395,7.573271
